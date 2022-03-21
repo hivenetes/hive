@@ -1,0 +1,28 @@
+  apiVersion: apps/v1
+  kind: DaemonSet
+  metadata:
+    creationTimestamp: null
+    labels:
+      app: rogue
+    name: rogue
+  spec:
+    selector:
+      matchLabels:
+        app: rogue
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          app: rogue
+      spec:
+        containers:
+        - image: praqma/network-multitool:alpine-extra
+          name: network-multitool
+          volumeMounts:
+          - name: host
+            mountPath: /hacked
+ 
+        volumes:
+        - name: host
+          hostPath:
+            path: /
