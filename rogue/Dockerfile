@@ -30,4 +30,4 @@ RUN useradd -ms ${shell} ${user} \
 ENV USER=${user}
 USER ${user}
 
-WORKDIR /home/${user}/code
+WORKDIR /home/${user}/playground
