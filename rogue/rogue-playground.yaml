@@ -3,9 +3,10 @@ kind: Pod
 metadata:
   name: playground
 spec:
+  hostPID: true
   containers:
   - name: playground
-    image: abigillu/playground:v0.0.1
+    image: abigillu/playground:v1.1.0
     command: [ "/bin/bash", "-c", "--" ]
     args: [ "while true; do sleep 30; done;" ]
     volumeMounts:
