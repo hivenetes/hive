@@ -2,5 +2,5 @@ apiVersion: v2
 name: guestbook
 description: A Helm chart for 3-tier microservice application
 type: application
-version: 0.1.1
-appVersion: "0.1.1"
+version: 0.1.2
+appVersion: "0.1.2"
