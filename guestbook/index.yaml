@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  guestbook:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-04-29T22:31:15.124234+02:00"
+    description: A Helm chart for 3-tier microservice application
+    digest: 384a32d5e516c84e8950c16b78e354b24da563f834b53b8cd080c46daa3e335b
+    name: guestbook
+    type: application
+    urls:
+    - guestbook-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-04-29T22:31:15.123543+02:00"
