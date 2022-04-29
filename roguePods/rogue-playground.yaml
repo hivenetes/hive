@@ -7,6 +7,8 @@ spec:
   containers:
   - name: playground
     image: abigillu/playground:v1.1.0
+    securityContext:
+      privileged: true    
     command: [ "/bin/bash", "-c", "--" ]
     args: [ "while true; do sleep 30; done;" ]
     volumeMounts:
