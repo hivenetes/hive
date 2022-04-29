@@ -1,5 +1,6 @@
-# Guestbook Microservices Application
+# Hive
 
-This example shows a simple multi-tier web application using Kubernetes and Docker.
+A repository to store my demo setup configurations that I use in talks/presentations
 
-Please follow the tutorial at https://cloud.google.com/kubernetes-engine/docs/tutorials/guestbook.
+- Application configurations
+- Pod definitions
