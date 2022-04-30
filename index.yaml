@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  guestbook:
+  - apiVersion: v2
+    appVersion: 0.1.2
+    created: "2022-04-30T13:48:10.598736654Z"
+    description: A Helm chart for 3-tier microservice application
+    digest: 98ef1df00f7b74c0d0e459a327d95fcf9dcea00af21ac213aeba2c7e9c19d636
+    name: guestbook
+    type: application
+    urls:
+    - https://github.com/hivenetes/hive/releases/download/guestbook-0.1.2/guestbook-0.1.2.tgz
+    version: 0.1.2
+generated: "2022-04-30T13:48:10.598741154Z"
