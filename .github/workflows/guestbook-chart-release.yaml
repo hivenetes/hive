@@ -1,20 +1,32 @@
+name: Hive-Guestbook-Chart-Release
 
-name: release-chart
 on:
   push:
-    tags: 'chart.*'
+    branches:
+      - main
 
 jobs:
-  release-chart:
+  release:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Publish Helm chart
-        uses: stefanprodan/helm-gh-pages@master
+      - name: Checkout
+        uses: actions/checkout@v2
         with:
-          token: ${{ secrets.BOT_TOKEN }}
-          charts_dir: guestbook
-          charts_url: https://hivenetes.github.io/hive/
-          owner: diabhey
-          repository: hive
-          branch: gh-pages         
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name "$GITHUB_ACTOR"
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+
+      - name: Install Helm
+        uses: azure/setup-helm@v1
+        with:
+          version: v3.8.1
+
+      - name: Run chart-releaser
+        uses: helm/chart-releaser-action@v1.4.0
+        with:
+          charts_dir: guestbook        
+        env:
+          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
