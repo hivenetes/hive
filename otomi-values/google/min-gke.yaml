@@ -5,6 +5,6 @@ cluster:
   provider: google
 
 otomi:
-  version: v0.16.2
+  version: v0.16.7
   adminPassword: 
   isMultitenant: true
