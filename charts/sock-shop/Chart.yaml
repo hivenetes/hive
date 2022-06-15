@@ -2,8 +2,8 @@ apiVersion: v2
 name: sock-shop
 description: A Helm chart for sock-shop by weaveworks 
 type: application
-version: 0.1.2
-appVersion: "0.1.2"
+version: 0.1.3
+appVersion: "0.1.3"
 home: https://hivenetes.github.io/hive/
 sources: 
 - https://microservices-demo.github.io/
