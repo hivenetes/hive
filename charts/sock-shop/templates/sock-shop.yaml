@@ -10,7 +10,7 @@ metadata:
   name: carts
   labels:
     name: carts
-  namespace: team-demo
+  
 spec:
   replicas: 1
   selector:
@@ -63,7 +63,7 @@ metadata:
         prometheus.io/scrape: 'true'
   labels:
     name: carts
-  namespace: team-demo
+  
 spec:
   ports:
     # the port that this service should serve on
@@ -78,7 +78,7 @@ metadata:
   name: carts-db
   labels:
     name: carts-db
-  namespace: team-demo
+  
 spec:
   replicas: 1
   selector:
@@ -120,7 +120,7 @@ metadata:
   name: carts-db
   labels:
     name: carts-db
-  namespace: team-demo
+  
 spec:
   ports:
     # the port that this service should serve on
@@ -135,7 +135,7 @@ metadata:
   name: catalogue
   labels:
     name: catalogue
-  namespace: team-demo
+  
 spec:
   replicas: 1
   selector:
@@ -193,7 +193,7 @@ metadata:
         prometheus.io/scrape: 'true'
   labels:
     name: catalogue
-  namespace: team-demo
+  
 spec:
   ports:
     # the port that this service should serve on
@@ -208,7 +208,7 @@ metadata:
   name: catalogue-db
   labels:
     name: catalogue-db
-  namespace: team-demo
+  
 spec:
   replicas: 1
   selector:
@@ -246,7 +246,7 @@ metadata:
   name: catalogue-db
   labels:
     name: catalogue-db
-  namespace: team-demo
+  
 spec:
   ports:
     # the port that this service should serve on
@@ -259,7 +259,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: front-end
-  namespace: team-demo
+  
 spec:
   replicas: 1
   selector:
@@ -315,7 +315,7 @@ metadata:
         prometheus.io/scrape: 'true'
   labels:
     name: front-end
-  namespace: team-demo
+  
 spec:
   type: ClusterIP
   ports:
@@ -331,7 +331,7 @@ metadata:
   name: orders
   labels:
     name: orders
-  namespace: team-demo
+  
 spec:
   replicas: 1
   selector:
@@ -384,7 +384,7 @@ metadata:
         prometheus.io/scrape: 'true'
   labels:
     name: orders
-  namespace: team-demo
+  
 spec:
   ports:
     # the port that this service should serve on
@@ -399,7 +399,7 @@ metadata:
   name: orders-db
   labels:
     name: orders-db
-  namespace: team-demo
+  
 spec:
   replicas: 1
   selector:
@@ -441,7 +441,7 @@ metadata:
   name: orders-db
   labels:
     name: orders-db
-  namespace: team-demo
+  
 spec:
   ports:
     # the port that this service should serve on
@@ -456,7 +456,7 @@ metadata:
   name: payment
   labels:
     name: payment
-  namespace: team-demo
+  
 spec:
   replicas: 1
   selector:
@@ -511,7 +511,7 @@ metadata:
         prometheus.io/scrape: 'true'
   labels:
     name: payment
-  namespace: team-demo
+  
 spec:
   ports:
     # the port that this service should serve on
@@ -526,7 +526,7 @@ metadata:
   name: queue-master
   labels:
     name: queue-master
-  namespace: team-demo
+  
 spec:
   replicas: 1
   selector:
@@ -563,7 +563,7 @@ metadata:
         prometheus.io/scrape: 'true'
   labels:
     name: queue-master
-  namespace: team-demo
+  
 spec:
   ports:
     # the port that this service should serve on
@@ -578,7 +578,7 @@ metadata:
   name: rabbitmq
   labels:
     name: rabbitmq
-  namespace: team-demo
+  
 spec:
   replicas: 1
   selector:
@@ -626,7 +626,7 @@ metadata:
         prometheus.io/port: '9090'
   labels:
     name: rabbitmq
-  namespace: team-demo
+  
 spec:
   ports:
     # the port that this service should serve on
@@ -646,7 +646,7 @@ metadata:
   name: session-db
   labels:
     name: session-db
-  namespace: team-demo
+  
 spec:
   replicas: 1
   selector:
@@ -683,7 +683,7 @@ metadata:
   name: session-db
   labels:
     name: session-db
-  namespace: team-demo
+  
 spec:
   ports:
     # the port that this service should serve on
@@ -698,7 +698,7 @@ metadata:
   name: shipping
   labels:
     name: shipping
-  namespace: team-demo
+  
 spec:
   replicas: 1
   selector:
@@ -753,7 +753,7 @@ metadata:
         prometheus.io/scrape: 'true'
   labels:
     name: shipping
-  namespace: team-demo
+  
 spec:
   ports:
     # the port that this service should serve on
@@ -769,7 +769,7 @@ metadata:
   name: user
   labels:
     name: user
-  namespace: team-demo
+  
 spec:
   replicas: 1
   selector:
@@ -827,7 +827,7 @@ metadata:
         prometheus.io/scrape: 'true'
   labels:
     name: user
-  namespace: team-demo
+  
 spec:
   ports:
     # the port that this service should serve on
@@ -843,7 +843,7 @@ metadata:
   name: user-db
   labels:
     name: user-db
-  namespace: team-demo
+  
 spec:
   replicas: 1
   selector:
@@ -886,7 +886,7 @@ metadata:
   name: user-db
   labels:
     name: user-db
-  namespace: team-demo
+  
 spec:
   ports:
     # the port that this service should serve on
