@@ -5,7 +5,8 @@ type: application
 version: 0.1.1
 appVersion: "0.1.1"
 home: https://hivenetes.github.io/hive/
-sources: https://microservices-demo.github.io/
+sources: 
+- https://microservices-demo.github.io/
 maintainers:
   - name: diabhey
 keywords:
