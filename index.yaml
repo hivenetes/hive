@@ -54,6 +54,24 @@ entries:
     version: 0.1.2
   sock-shop:
   - apiVersion: v2
+    appVersion: 0.1.3
+    created: "2022-06-15T16:03:25.292698748Z"
+    description: A Helm chart for sock-shop by weaveworks
+    digest: c5b7162e4b2615e5ea06c59885bea5a9fb0cac1eb98ce318c06b3b7005629a75
+    home: https://hivenetes.github.io/hive/
+    keywords:
+    - sock-shop
+    - application
+    maintainers:
+    - name: diabhey
+    name: sock-shop
+    sources:
+    - https://microservices-demo.github.io/
+    type: application
+    urls:
+    - https://github.com/hivenetes/hive/releases/download/sock-shop-0.1.3/sock-shop-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
     appVersion: 0.1.2
     created: "2022-06-15T15:44:55.695184431Z"
     description: A Helm chart for sock-shop by weaveworks
@@ -89,4 +107,4 @@ entries:
     urls:
     - https://github.com/hivenetes/hive/releases/download/sock-shop-0.1.1/sock-shop-0.1.1.tgz
     version: 0.1.1
-generated: "2022-06-15T15:44:55.695196331Z"
+generated: "2022-06-15T16:03:25.292713549Z"
