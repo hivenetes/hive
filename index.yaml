@@ -3,6 +3,24 @@ entries:
   guestbook:
   - apiVersion: v2
     appVersion: 0.1.3
+    created: "2022-06-15T15:34:56.16631631Z"
+    description: A Helm chart for 3-tier microservice guestbook application
+    digest: 8ae6d82f7841166f5841a5ffa7588824c0ff7641b6caadd3499a599f36c07430
+    home: https://hivenetes.github.io/hive/
+    keywords:
+    - guestbook
+    - application
+    maintainers:
+    - name: diabhey
+    name: guestbook
+    sources:
+    - https://cloud.google.com/kubernetes-engine/docs/tutorials/guestbook
+    type: application
+    urls:
+    - https://github.com/hivenetes/hive/releases/download/guestbook-0.1.5/guestbook-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v2
+    appVersion: 0.1.3
     created: "2022-05-02T10:36:07.68110344Z"
     description: A Helm chart for 3-tier microservice application
     digest: bf5f6e46bea1e723145a1956568d6b3820032ad11702ec642d428a7ddbd0e816
@@ -34,4 +52,23 @@ entries:
     urls:
     - https://github.com/hivenetes/hive/releases/download/guestbook-0.1.2/guestbook-0.1.2.tgz
     version: 0.1.2
-generated: "2022-05-02T10:36:07.68111504Z"
+  sock-shop:
+  - apiVersion: v2
+    appVersion: 0.1.1
+    created: "2022-06-15T15:34:56.411686362Z"
+    description: A Helm chart for sock-shop by weaveworks
+    digest: ffdad8149b556de80048085b1f278e0a8847cf3827243a58490ba7e8d280b273
+    home: https://hivenetes.github.io/hive/
+    keywords:
+    - sock-shop
+    - application
+    maintainers:
+    - name: diabhey
+    name: sock-shop
+    sources:
+    - https://microservices-demo.github.io/
+    type: application
+    urls:
+    - https://github.com/hivenetes/hive/releases/download/sock-shop-0.1.1/sock-shop-0.1.1.tgz
+    version: 0.1.1
+generated: "2022-06-15T15:34:56.411841462Z"
