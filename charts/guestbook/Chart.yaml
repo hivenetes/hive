@@ -2,7 +2,7 @@ apiVersion: v2
 name: guestbook
 description: A Helm chart for 3-tier microservice guestbook application
 type: application
-version: 0.1.7
+version: 0.1.8
 appVersion: "0.1.4"
 home: https://hivenetes.github.io/hive/
 sources:
