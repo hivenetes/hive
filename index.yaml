@@ -3,6 +3,24 @@ entries:
   guestbook:
   - apiVersion: v2
     appVersion: 0.1.4
+    created: "2022-07-19T10:06:06.298635358Z"
+    description: A Helm chart for 3-tier microservice guestbook application
+    digest: 84d0e34360af9b80ba31a92fd59ce5683a12d4dcd12a0fcda57fb06e0718b536
+    home: https://hivenetes.github.io/hive/
+    keywords:
+    - guestbook
+    - application
+    maintainers:
+    - name: diabhey
+    name: guestbook
+    sources:
+    - https://cloud.google.com/kubernetes-engine/docs/tutorials/guestbook
+    type: application
+    urls:
+    - https://github.com/hivenetes/hive/releases/download/guestbook-0.1.9/guestbook-0.1.9.tgz
+    version: 0.1.9
+  - apiVersion: v2
+    appVersion: 0.1.4
     created: "2022-07-11T11:02:05.374552661Z"
     description: A Helm chart for 3-tier microservice guestbook application
     digest: 642dda8e14dd33053c0e895eca07ce9ab474cf1ec46a795b4346917d73b62cf2
@@ -161,4 +179,4 @@ entries:
     urls:
     - https://github.com/hivenetes/hive/releases/download/sock-shop-0.1.1/sock-shop-0.1.1.tgz
     version: 0.1.1
-generated: "2022-07-11T11:02:05.374606063Z"
+generated: "2022-07-19T10:06:06.298726463Z"
