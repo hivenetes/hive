@@ -30,10 +30,10 @@ jobs:
         run: |  
               helm repo add otomi https://otomi.io/otomi-core; 
               helm repo update;
-              helm install otomi otomi/otomi --set cluster.k8sVersion="1.22" --set cluster.name=swim-with-sharks --set cluster.provider=digitalocean
+              helm install --wait --wait-for-jobs --timeout 40m0s otomi otomi/otomi --set cluster.k8sVersion="1.22" --set cluster.name=swim-with-sharks --set cluster.provider=digitalocean
 
       - name: Disconnect from vcluster
         run: vcluster disconnect
 
       - name: Delete vcluster namepspace
-        run: kubectl delete namespace vluster-my-vcluster           
+        run: kubectl delete namespace vcluster-my-vcluster           
