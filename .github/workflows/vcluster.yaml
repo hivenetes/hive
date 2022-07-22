@@ -1,0 +1,27 @@
+name: otomi-vcluster-test
+
+on:
+  push:
+    branches:
+      - vcluster
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+          fetch-depth: 0
+      - name: Get cluster info
+        run: echo DIGITALOCEAN_CLUSTER_ID=`doctl kubernetes cluster get swim-with-sharks --format ID --no-header` >> $GITHUB_ENV
+
+      - name: Update context
+        run: doctl kubernetes cluster kubeconfig save --expiry-seconds 3600 ${{ env.DIGITALOCEAN_CLUSTER_ID }}
+
+      - name: Install vcluster cli
+        run: curl -s -L "https://github.com/loft-sh/vcluster/releases/latest" | sed -nE 's!.*"([^"]*vcluster-linux-amd64)".*!https://github.com\1!p' | xargs -n 1 curl -L -o vcluster && chmod +x vcluster;
+             sudo mv vcluster /usr/local/bin;
+      - name: Install a vcluster
+        run:  vcluster create my-vcluster --expose      
