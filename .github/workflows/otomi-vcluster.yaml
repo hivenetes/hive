@@ -3,14 +3,14 @@ name: otomi-vcluster-test
 on:
   push:
     branches:
-      - vcluster
+      - main
 
 env:
   DIGITALOCEAN_CLUSTER_NAME: swim-with-sharks
   VCLUSTER: integration-test
 
 jobs:
-  release:
+  vcluster-otomi-install:
     runs-on: ubuntu-latest
     steps:
       - name: Install doctl
