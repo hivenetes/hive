@@ -6,7 +6,7 @@ on:
       - vcluster
 
 env:
-  DIGITALOCEAN_CLUSTER_NAME: swin-with-sharks
+  DIGITALOCEAN_CLUSTER_NAME: swim-with-sharks
   VCLUSTER: integration-test
 
 jobs:
