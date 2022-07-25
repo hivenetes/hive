@@ -4,3 +4,4 @@ A repository to store my demo setup configurations that I use in talks/presentat
 
 - Application configurations
 - Pod definitions
+- DevOps workflows
