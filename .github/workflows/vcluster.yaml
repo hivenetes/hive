@@ -5,6 +5,10 @@ on:
     branches:
       - vcluster
 
+env:
+  DIGITALOCEAN_CLUSTER_NAME: swin-with-sharks
+  VCLUSTER: integration-test
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -15,7 +19,7 @@ jobs:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
           fetch-depth: 0
       - name: Get cluster info
-        run: echo DIGITALOCEAN_CLUSTER_ID=`doctl kubernetes cluster get swim-with-sharks --format ID --no-header` >> $GITHUB_ENV
+        run: echo DIGITALOCEAN_CLUSTER_ID=`doctl kubernetes cluster get $DIGITALOCEAN_CLUSTER_NAME --format ID --no-header` >> $GITHUB_ENV
 
       - name: Update context
         run: doctl kubernetes cluster kubeconfig save --expiry-seconds 3600 ${{ env.DIGITALOCEAN_CLUSTER_ID }}
@@ -24,7 +28,7 @@ jobs:
         run: curl -s -L "https://github.com/loft-sh/vcluster/releases/latest" | sed -nE 's!.*"([^"]*vcluster-linux-amd64)".*!https://github.com\1!p' | xargs -n 1 curl -L -o vcluster && chmod +x vcluster;
              sudo mv vcluster /usr/local/bin;
       - name: Install a vcluster
-        run:  vcluster create my-vcluster --expose
+        run:  vcluster create $VCLUSTER --expose
 
       - name: Install Otomi
         run: |  
@@ -36,4 +40,4 @@ jobs:
         run: vcluster disconnect
 
       - name: Delete vcluster namepspace
-        run: kubectl delete namespace vcluster-my-vcluster           
+        run: kubectl delete namespace vcluster-$VCLUSTER          
