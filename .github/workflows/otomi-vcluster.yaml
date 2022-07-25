@@ -1,0 +1,43 @@
+name: otomi-vcluster-test
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  DIGITALOCEAN_CLUSTER_NAME: swim-with-sharks
+  VCLUSTER: integration-test
+
+jobs:
+  vcluster-otomi-install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+          fetch-depth: 0
+      - name: Get cluster info
+        run: echo DIGITALOCEAN_CLUSTER_ID=`doctl kubernetes cluster get $DIGITALOCEAN_CLUSTER_NAME --format ID --no-header` >> $GITHUB_ENV
+
+      - name: Update context
+        run: doctl kubernetes cluster kubeconfig save --expiry-seconds 3600 ${{ env.DIGITALOCEAN_CLUSTER_ID }}
+
+      - name: Install vcluster cli
+        run: curl -s -L "https://github.com/loft-sh/vcluster/releases/latest" | sed -nE 's!.*"([^"]*vcluster-linux-amd64)".*!https://github.com\1!p' | xargs -n 1 curl -L -o vcluster && chmod +x vcluster;
+             sudo mv vcluster /usr/local/bin;
+      - name: Install a vcluster
+        run:  vcluster create $VCLUSTER --expose
+
+      - name: Install Otomi
+        run: |  
+              helm repo add otomi https://otomi.io/otomi-core; 
+              helm repo update;
+              helm install --wait --wait-for-jobs --timeout 40m0s otomi otomi/otomi --set cluster.k8sVersion="1.22" --set cluster.name=swim-with-sharks --set cluster.provider=digitalocean
+
+      - name: Disconnect from vcluster
+        run: vcluster disconnect
+
+      - name: Delete vcluster namepspace
+        run: kubectl delete namespace vcluster-$VCLUSTER          
